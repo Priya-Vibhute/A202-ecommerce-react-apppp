@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import HomePage from './components/HomePage';
+import Template from './components/Template';
+import ProductForm from './components/products/ProductForm';
+
+
+
+// Creating routes
+const routes=createBrowserRouter([
+  {
+    path:"",
+    element:<Template/>,
+    children:[
+      {
+        path:"",
+        element:<HomePage/>
+      },
+      {
+        path:"create-product",
+        element:<ProductForm/>
+      }
+    ]
+  }
+])
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+        <RouterProvider router={routes}/>
     </div>
   );
 }
