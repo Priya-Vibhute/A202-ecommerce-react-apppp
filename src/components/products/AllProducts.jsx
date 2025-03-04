@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { fetchProducts, fetchProductsByProductNameAsc, fetchProductsByProductNameDesc } from '../../services/ProductService'
 import ProductItem from './ProductItem'
+import { fetchCategories } from '../../services/CategoryService'
 
 function AllProducts() {
 
     const [products, setProducts] = useState([])
+    const[categories,setCategories]=useState([])
     const [searchQuery,setSearchQuery]=useState("")
 
     //  To fetch all products
@@ -12,9 +14,15 @@ function AllProducts() {
         setProducts(await fetchProducts())
     }
 
+    // To fetch all categories
+    const getCategories=async ()=>{
+         setCategories(await fetchCategories())
+    }
+
 
     useEffect(() => {
         getProducts();
+        getCategories();
     }, [])
 
 // To sort data
@@ -59,6 +67,21 @@ function AllProducts() {
                             <li class="list-group-item" onClick={()=>{ sort("Low_To_High")}}>Low to High</li>
                             <li class="list-group-item" onClick={()=>{ sort("High_To_Low")}}>High to Low</li>
                         </ul>
+
+                        <hr />
+
+                       {/* fetching categories  */}
+                        <ul class="list-group">
+
+                           {categories.map((category)=>{
+     
+                             return  <li class="list-group-item">{category.categoryName}</li>
+    
+                           })}
+
+                        </ul>
+
+
 
                     </div>
                     <div class="col">
