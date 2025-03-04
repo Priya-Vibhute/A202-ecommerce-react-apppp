@@ -4,6 +4,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import HomePage from './components/HomePage';
 import Template from './components/Template';
 import ProductForm from './components/products/ProductForm';
+import AllProducts from './components/products/AllProducts';
 
 
 
@@ -20,6 +21,10 @@ const routes=createBrowserRouter([
       {
         path:"create-product",
         element:<ProductForm/>
+      },
+      {
+        path:"all-products",
+        element:<AllProducts/>
       }
     ]
   }

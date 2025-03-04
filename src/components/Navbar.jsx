@@ -14,6 +14,10 @@ function Navbar() {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to={"/create-product"}>Add Product</Link>
         </li>
+
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to={"/all-products"}>products</Link>
+        </li>
         <li className="nav-item">
           <a className="nav-link" href="#">Link</a>
         </li>
