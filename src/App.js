@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import Template from './components/Template';
 import ProductForm from './components/products/ProductForm';
 import AllProducts from './components/products/AllProducts';
+import ProductDetail from './components/products/ProductDetail';
 
 
 
@@ -25,6 +26,10 @@ const routes=createBrowserRouter([
       {
         path:"all-products",
         element:<AllProducts/>
+      },
+      {
+        path:"products/:productId",
+        element:<ProductDetail/>
       }
     ]
   }

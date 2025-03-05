@@ -1,8 +1,14 @@
 import React from 'react'
 import logo from '../../logo.svg'
+import { useNavigate } from 'react-router-dom'
 function ProductItem({productId,productName, productDescription,productPrice}) {
+ 
+  const navigate=useNavigate();
+
   return (
-    <div class="col">
+    
+    <div class="col" onClick={()=>{navigate(`/products/${productId}`)}}>
+    
     <div class="card">
       <img src={logo} class="card-img-top" alt="..."/>
       <div class="card-body">
