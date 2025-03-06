@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchProductById } from '../../services/ProductService';
-import logo from '../../logo.svg'
+import logo from '../../images/icon-image-not-available.svg';
 import '../../productdetail.css'
 
 function ProductDetail() {

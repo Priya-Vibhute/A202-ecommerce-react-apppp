@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../logo.svg'
+import logo from '../../images/icon-image-not-available.svg';
 import { useNavigate } from 'react-router-dom'
 function ProductItem({productId,productName, productDescription,productPrice}) {
  
