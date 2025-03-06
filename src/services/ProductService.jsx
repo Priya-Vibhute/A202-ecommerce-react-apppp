@@ -51,3 +51,18 @@ export const fetchProductById=async (productId)=>{
    const data=await response.json()
    return data;
 }
+
+
+//To update product By id
+
+export const updateProduct=async (productId,product)=>{
+   const response=await fetch(API_LINK+`/${productId}`,{
+      method:"PUT",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(product)
+   })
+
+   const data=await response.json();
+   return data;
+
+}

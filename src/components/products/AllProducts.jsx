@@ -103,7 +103,8 @@ function AllProducts() {
                                     return <ProductItem productId={product.productId}
                                         productName={product.productName}
                                         productDescription={product.productDescription}
-                                        productPrice={product.productPrice} />
+                                        productPrice={product.productPrice} 
+                                        refreshProducts={getProducts}/>
                                 })}
 
 
