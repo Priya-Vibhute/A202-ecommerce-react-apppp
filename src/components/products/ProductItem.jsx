@@ -2,8 +2,15 @@ import React from 'react'
 import logo from '../../images/icon-image-not-available.svg';
 import { useNavigate } from 'react-router-dom'
 import UpdateForm from './UpdateForm';
+import { deleteProductById } from '../../services/ProductService';
 function ProductItem({ productId, productName, productDescription, productPrice,refreshProducts }) {
   const navigate = useNavigate();
+
+  const deleteProduct=async()=>{
+  
+    const data=await deleteProductById(productId);
+    refreshProducts();
+  }
 
   return (
 
@@ -23,7 +30,7 @@ function ProductItem({ productId, productName, productDescription, productPrice,
           </button>
           
 
-          <button className='btn btn-danger ms-2'>Delete</button>
+          <button className='btn btn-danger ms-2' onClick={deleteProduct}>Delete</button>
 
           <UpdateForm  productId={productId} 
                        productName={productName} 

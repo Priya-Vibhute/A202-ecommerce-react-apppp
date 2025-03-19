@@ -66,3 +66,9 @@ export const updateProduct=async (productId,product)=>{
    return data;
 
 }
+
+export const deleteProductById=async(productId)=>{
+ const reponse= await fetch(`${API_LINK}/${productId}`,{method:"DELETE"})
+ const data=await reponse.json()
+ return data;
+}
